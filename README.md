@@ -2,7 +2,7 @@
 
 This folder hosts static files for domain-based deep links on:
 
-- `https://genkisportz.in/tournament/<id>?invite=<token>`
+- `https://genkisportz.in/tournament/<id>?invite=<code>`
 
 ## Folder layout
 

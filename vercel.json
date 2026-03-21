@@ -1,8 +1,20 @@
 {
   "rewrites": [
     {
+      "source": "/.well-known/(.*)",
+      "destination": "/.well-known/$1"
+    },
+    {
       "source": "/tournament/(.*)",
       "destination": "/tournament/index.html"
+    },
+    {
+      "source": "/team/(.*)",
+      "destination": "/team/index.html"
+    },
+    {
+      "source": "/friendly/(.*)",
+      "destination": "/friendly/index.html"
     }
   ]
 }

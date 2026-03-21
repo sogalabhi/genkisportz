@@ -1,15 +1,19 @@
 (function () {
   function isInvitePage(pathname) {
-    return pathname.indexOf("/tournament") === 0;
+    return (
+      pathname.indexOf("/tournament") === 0 ||
+      pathname.indexOf("/team") === 0 ||
+      pathname.indexOf("/friendly") === 0
+    );
   }
 
   function getPathParts() {
     return window.location.pathname.split("/").filter(Boolean);
   }
 
-  function buildAppUrl(tournamentId, inviteToken) {
-    var query = inviteToken ? "?invite=" + encodeURIComponent(inviteToken) : "";
-    return "badmintonapp://tournament/" + encodeURIComponent(tournamentId || "") + query;
+  function buildAppUrl(targetType, targetId, inviteCode) {
+    var query = inviteCode ? "?invite=" + encodeURIComponent(inviteCode) : "";
+    return "badmintonapp://" + targetType + "/" + encodeURIComponent(targetId || "") + query;
   }
 
   function openApp(appUrl) {
@@ -25,39 +29,44 @@
     }, 250);
   }
 
-  function tryOpenApp(appUrl, inviteToken) {
-    if (!inviteToken) return;
+  function tryOpenApp(appUrl, inviteCode) {
+    if (!inviteCode) return;
     // Attempt once on page load so invite links deep-link immediately.
     setTimeout(function () {
       openApp(appUrl);
     }, 100);
   }
 
-  function setupTournamentPage() {
+  function setupInvitePage() {
     var parts = getPathParts();
-    // supports /tournament/<id> and rewrite fallback /tournament/
-    var tournamentId = parts.length >= 2 ? parts[1] : "";
-    if (!tournamentId) {
+    // supports /{type}/<id> and rewrite fallback /{type}/
+    var targetType = parts.length >= 1 ? parts[0] : "";
+    var targetId = parts.length >= 2 ? parts[1] : "";
+    if (!targetId) {
       var qsId = new URLSearchParams(window.location.search).get("id");
-      tournamentId = qsId || "";
+      targetId = qsId || "";
     }
-    var inviteToken = new URLSearchParams(window.location.search).get("invite") || "";
+    var inviteCode = (
+      new URLSearchParams(window.location.search).get("invite") || ""
+    )
+      .trim()
+      .toUpperCase();
 
-    var tournamentEl = document.getElementById("tournamentId");
-    var tokenEl = document.getElementById("inviteToken");
+    var idEl = document.getElementById("targetId");
+    var codeEl = document.getElementById("inviteCode");
     var openBtn = document.getElementById("openInAppBtn");
     var copyBtn = document.getElementById("copyInviteBtn");
     var summary = document.getElementById("inviteSummary");
 
-    if (tournamentEl) tournamentEl.textContent = tournamentId || "-";
-    if (tokenEl) tokenEl.textContent = inviteToken || "-";
-    if (summary && tournamentId) {
+    if (idEl) idEl.textContent = targetId || "-";
+    if (codeEl) codeEl.textContent = inviteCode || "-";
+    if (summary && targetId) {
       summary.textContent =
-        "Invite detected for tournament " + tournamentId + ". Open in app to continue.";
+        "Invite detected for " + targetType + " " + targetId + ". Open in app to continue.";
     }
 
-    var appUrl = buildAppUrl(tournamentId, inviteToken);
-    tryOpenApp(appUrl, inviteToken);
+    var appUrl = buildAppUrl(targetType, targetId, inviteCode);
+    tryOpenApp(appUrl, inviteCode);
 
     if (openBtn) {
       openBtn.addEventListener("click", function () {
@@ -78,7 +87,7 @@
   }
 
   if (isInvitePage(window.location.pathname)) {
-    setupTournamentPage();
+    setupInvitePage();
   }
 })();
 
