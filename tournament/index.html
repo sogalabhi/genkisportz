@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tournament Invite - Genki Sports</title>
+    <meta
+      name="description"
+      content="Open tournament invite in Genki Sports app."
+    />
+    <link rel="stylesheet" href="/assets/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>App Not Installed</h1>
+      <p id="inviteSummary">
+        This tournament invite can be opened in the Genki Sports app.
+      </p>
+
+      <div class="panel">
+        <p><strong>Tournament ID:</strong> <span id="tournamentId">-</span></p>
+        <p><strong>Invite token:</strong> <span id="inviteToken">-</span></p>
+      </div>
+
+      <div class="actions">
+        <button id="openInAppBtn" class="btn btn-primary">Open in App</button>
+        <button id="copyInviteBtn" class="btn btn-secondary">Copy Invite Link</button>
+      </div>
+
+      <p class="muted">App Store links are coming soon.</p>
+      <div class="panel">
+        <p class="small">
+          If this link was opened inside Instagram/Facebook/other in-app browser,
+          open it in your device browser from the menu and try again.
+        </p>
+      </div>
+    </main>
+
+    <script src="/assets/app.js"></script>
+  </body>
+</html>
+
