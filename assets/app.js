@@ -48,9 +48,7 @@
     }
     var inviteCode = (
       new URLSearchParams(window.location.search).get("invite") || ""
-    )
-      .trim()
-      .toUpperCase();
+    ).trim();
 
     var idEl = document.getElementById("targetId");
     var codeEl = document.getElementById("inviteCode");

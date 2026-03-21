@@ -8,6 +8,14 @@
           {
             "/": "/tournament/*",
             "comment": "Tournament invite links"
+          },
+          {
+            "/": "/team/*",
+            "comment": "Team invite links"
+          },
+          {
+            "/": "/friendly/*",
+            "comment": "Friendly invite links"
           }
         ]
       }
