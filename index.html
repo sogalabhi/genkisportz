@@ -4,24 +4,37 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Genki Sports Links</title>
-    <link rel="stylesheet" href="/assets/styles.css" />
+    <!-- Tailwind CSS CDN for immediate use -->
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body>
-    <main class="container">
-      <h1>Genki Sports Link Gateway</h1>
-      <p>
+  <!-- backgroundDark: #171E14, text: white -->
+  <body class="bg-[#171E14] text-white font-sans antialiased m-0">
+    <!-- AppSpacing.pageHorizontal (16px/px-4) -->
+    <main class="max-w-2xl mx-auto px-4 py-8 sm:py-12">
+      
+      <h1 class="text-3xl font-bold mb-4 text-white">Genki Sports Link Gateway</h1>
+      
+      <!-- neutral300: #E0E0E0 for standard readable text -->
+      <p class="text-[#E0E0E0] text-base mb-6">
         This domain handles tournament invite links and opens the Genki Sports
         app when available.
       </p>
-      <div class="panel">
-        <p><strong>Expected invite URL format</strong></p>
-        <code>https://genkisportz.in/tournament/&lt;id&gt;?invite=&lt;code&gt;</code>
+
+      <!-- surfaceDark: #1F2E18, darkBorder: #243128, AppRadii.lg: 24px -->
+      <div class="bg-[#1F2E18] border border-[#243128] rounded-[24px] p-5 my-4">
+        <p class="mb-2"><strong class="text-white text-lg">Expected invite URL format</strong></p>
+        <!-- inkBlack: #000000, AppRadii.defaultRadius: 16px -->
+        <code class="block bg-[#000000] border border-[#243128] rounded-[16px] px-4 py-3 font-mono text-sm text-[#E0E0E0] break-all">
+          https://genkisportz.in/tournament/&lt;id&gt;?invite=&lt;code&gt;
+        </code>
       </div>
-      <p class="muted">
+
+      <!-- slateGrey/neutral500: #9E9E9E for muted text -->
+      <p class="text-[#9E9E9E] text-sm mt-6">
         If you reached this page from an invite, open the full link from your
         chat app again.
       </p>
+      
     </main>
   </body>
 </html>
-
