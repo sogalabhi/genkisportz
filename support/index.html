@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Support – Genki SportZ</title>
+    <meta name="description" content="Get help with Genki SportZ. Find answers to common questions or contact our support team." />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <style>
+      body { font-family: 'Inter', sans-serif; }
+      .nav-link { color: #9E9E9E; font-size: 14px; text-decoration: none; transition: color 0.15s; }
+      .nav-link:hover { color: #fff; }
+      .section-divider { border: none; border-top: 1px solid #243128; margin: 0; }
+      details > summary { list-style: none; cursor: pointer; }
+      details > summary::-webkit-details-marker { display: none; }
+      details[open] .chevron { transform: rotate(180deg); }
+      .chevron { transition: transform 0.2s ease; }
+    </style>
+  </head>
+  <body class="bg-[#171E14] text-white antialiased">
+
+    <!-- NAV -->
+    <nav class="sticky top-0 z-50 bg-[#171E14]/90 backdrop-blur-sm border-b border-[#243128]">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+        <a href="/" class="flex items-center gap-2 text-white font-bold text-lg no-underline" style="text-decoration:none">
+          <span class="text-[#4D882F] text-2xl">🏸</span>
+          <span>Genki<span class="text-[#4D882F]">SportZ</span></span>
+        </a>
+        <div class="hidden sm:flex items-center gap-6">
+          <a href="/#features" class="nav-link">Features</a>
+          <a href="/support" class="nav-link" style="color:#fff">Support</a>
+          <a href="/terms" class="nav-link">Terms</a>
+          <a href="/privacypolicy.html" class="nav-link">Privacy</a>
+        </div>
+        <button id="mobileMenuBtn" class="sm:hidden text-[#9E9E9E] hover:text-white focus:outline-none" aria-label="Open menu">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+      <div id="mobileMenu" class="hidden sm:hidden bg-[#171E14] border-b border-[#243128] px-4 pb-4 flex flex-col gap-3">
+        <a href="/#features" class="nav-link py-1">Features</a>
+        <a href="/support" class="nav-link py-1" style="color:#fff">Support</a>
+        <a href="/terms" class="nav-link py-1">Terms</a>
+        <a href="/privacypolicy.html" class="nav-link py-1">Privacy</a>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="pt-16 pb-12 px-4 sm:px-6 text-center border-b border-[#243128]">
+      <div class="max-w-2xl mx-auto">
+        <div class="text-4xl mb-4">🙋</div>
+        <h1 class="text-3xl sm:text-4xl font-bold mb-4">How can we help?</h1>
+        <p class="text-[#9E9E9E] text-lg">Find answers below or reach out to us directly — we're happy to help.</p>
+      </div>
+    </section>
+
+    <!-- CONTACT CARDS -->
+    <section class="py-14 px-4 sm:px-6">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-xl font-semibold mb-6 text-[#E0E0E0]">Contact Us</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-14">
+
+          <!-- Email -->
+          <a href="mailto:genkisportz1@gmail.com" class="block bg-[#1F2E18] border border-[#243128] rounded-[24px] p-6 no-underline hover:border-[#4D882F] transition-colors group" style="text-decoration:none">
+            <div class="text-2xl mb-3">✉️</div>
+            <div class="text-white font-semibold text-base mb-1 group-hover:text-[#4D882F] transition-colors">Email Support</div>
+            <div class="text-[#9E9E9E] text-sm">genkisportz1@gmail.com</div>
+            <div class="text-[#9E9E9E] text-xs mt-2">We respond within 1–2 business days</div>
+          </a>
+
+          <!-- Delete Account -->
+          <a href="/delete-account-request.html" class="block bg-[#1F2E18] border border-[#243128] rounded-[24px] p-6 no-underline hover:border-[#4D882F] transition-colors group" style="text-decoration:none">
+            <div class="text-2xl mb-3">🗑️</div>
+            <div class="text-white font-semibold text-base mb-1 group-hover:text-[#4D882F] transition-colors">Delete My Account</div>
+            <div class="text-[#9E9E9E] text-sm">Request permanent removal of your account and data</div>
+            <div class="text-[#9E9E9E] text-xs mt-2">Processed within 5–7 business days</div>
+          </a>
+        </div>
+
+        <!-- FAQ -->
+        <h2 class="text-xl font-semibold mb-6 text-[#E0E0E0]">Frequently Asked Questions</h2>
+        <div class="space-y-3">
+
+          <!-- FAQ Item -->
+          <details class="bg-[#1F2E18] border border-[#243128] rounded-[20px] group">
+            <summary class="flex items-center justify-between px-6 py-5 gap-4">
+              <span class="text-white font-medium text-sm sm:text-base">How do I book a badminton court?</span>
+              <svg class="chevron h-5 w-5 text-[#9E9E9E] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <div class="px-6 pb-5 text-[#9E9E9E] text-sm leading-relaxed border-t border-[#243128] pt-4 mt-0">
+              Open the app and tap <strong class="text-[#E0E0E0]">Book a Court</strong> on the home screen. Browse partner academies near you, select a date, pick an available time slot on the calendar grid, and confirm your booking. You'll receive an instant confirmation notification.
+            </div>
+          </details>
+
+          <details class="bg-[#1F2E18] border border-[#243128] rounded-[20px] group">
+            <summary class="flex items-center justify-between px-6 py-5 gap-4">
+              <span class="text-white font-medium text-sm sm:text-base">Can I cancel or reschedule a booking?</span>
+              <svg class="chevron h-5 w-5 text-[#9E9E9E] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <div class="px-6 pb-5 text-[#9E9E9E] text-sm leading-relaxed border-t border-[#243128] pt-4">
+              Cancellation and rescheduling policies are set by each partner academy. Go to <strong class="text-[#E0E0E0]">My Bookings</strong> in the app to view your booking details, where cancellation options (if available) will be shown. For issues, contact us at genkisportz1@gmail.com.
+            </div>
+          </details>
+
+          <details class="bg-[#1F2E18] border border-[#243128] rounded-[20px] group">
+            <summary class="flex items-center justify-between px-6 py-5 gap-4">
+              <span class="text-white font-medium text-sm sm:text-base">How does the equipment rental work?</span>
+              <svg class="chevron h-5 w-5 text-[#9E9E9E] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <div class="px-6 pb-5 text-[#9E9E9E] text-sm leading-relaxed border-t border-[#243128] pt-4">
+              During the court booking flow, you'll see an add-ons screen where you can add equipment (rackets, shuttlecocks, shoes, towels, etc.) to your session. Items are priced per-hour or flat-rate, and stock is validated in real time to ensure availability.
+            </div>
+          </details>
+
+          <details class="bg-[#1F2E18] border border-[#243128] rounded-[20px] group">
+            <summary class="flex items-center justify-between px-6 py-5 gap-4">
+              <span class="text-white font-medium text-sm sm:text-base">How do I join a tournament?</span>
+              <svg class="chevron h-5 w-5 text-[#9E9E9E] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <div class="px-6 pb-5 text-[#9E9E9E] text-sm leading-relaxed border-t border-[#243128] pt-4">
+              Navigate to the <strong class="text-[#E0E0E0]">Tournaments</strong> section in the app. Browse upcoming events, view details, and tap <strong class="text-[#E0E0E0]">Register</strong> to join. You can also join via a shared invite link sent by another player.
+            </div>
+          </details>
+
+          <details class="bg-[#1F2E18] border border-[#243128] rounded-[20px] group">
+            <summary class="flex items-center justify-between px-6 py-5 gap-4">
+              <span class="text-white font-medium text-sm sm:text-base">How is my payment processed?</span>
+              <svg class="chevron h-5 w-5 text-[#9E9E9E] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <div class="px-6 pb-5 text-[#9E9E9E] text-sm leading-relaxed border-t border-[#243128] pt-4">
+              Payments are securely processed via our payment gateway. We do not store your full card details. For payment issues or refunds, contact us at <a href="mailto:genkisportz1@gmail.com" class="text-[#4D882F] hover:underline">genkisportz1@gmail.com</a> with your booking reference.
+            </div>
+          </details>
+
+          <details class="bg-[#1F2E18] border border-[#243128] rounded-[20px] group">
+            <summary class="flex items-center justify-between px-6 py-5 gap-4">
+              <span class="text-white font-medium text-sm sm:text-base">How do I delete my account?</span>
+              <svg class="chevron h-5 w-5 text-[#9E9E9E] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <div class="px-6 pb-5 text-[#9E9E9E] text-sm leading-relaxed border-t border-[#243128] pt-4">
+              You can submit an account deletion request via our <a href="/delete-account-request.html" class="text-[#4D882F] hover:underline">Delete Account page</a>. All your personal data will be permanently removed within 5–7 business days. This action cannot be undone.
+            </div>
+          </details>
+
+          <details class="bg-[#1F2E18] border border-[#243128] rounded-[20px] group">
+            <summary class="flex items-center justify-between px-6 py-5 gap-4">
+              <span class="text-white font-medium text-sm sm:text-base">What data does Genki SportZ collect?</span>
+              <svg class="chevron h-5 w-5 text-[#9E9E9E] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <div class="px-6 pb-5 text-[#9E9E9E] text-sm leading-relaxed border-t border-[#243128] pt-4">
+              We collect the information needed to provide our services — such as your phone number, profile details, and location (to find nearby courts). Please review our full <a href="/privacypolicy.html" class="text-[#4D882F] hover:underline">Privacy Policy</a> for complete details.
+            </div>
+          </details>
+
+          <details class="bg-[#1F2E18] border border-[#243128] rounded-[20px] group">
+            <summary class="flex items-center justify-between px-6 py-5 gap-4">
+              <span class="text-white font-medium text-sm sm:text-base">Is Genki SportZ free to use?</span>
+              <svg class="chevron h-5 w-5 text-[#9E9E9E] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <div class="px-6 pb-5 text-[#9E9E9E] text-sm leading-relaxed border-t border-[#243128] pt-4">
+              Yes — the app is free to download and use. You only pay for court bookings, equipment rentals, tournament registrations, and marketplace transactions within the app.
+            </div>
+          </details>
+
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- FOOTER -->
+    <footer class="py-10 px-4 sm:px-6">
+      <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-[#9E9E9E] text-sm">
+        <div class="flex items-center gap-2 font-semibold text-white">
+          <span class="text-[#4D882F] text-xl">🏸</span>
+          <span>Genki<span class="text-[#4D882F]">SportZ</span></span>
+        </div>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="/support" class="nav-link">Support</a>
+          <a href="/terms" class="nav-link">Terms</a>
+          <a href="/privacypolicy.html" class="nav-link">Privacy Policy</a>
+          <a href="/delete-account-request.html" class="nav-link">Delete Account</a>
+        </div>
+        <p class="text-center sm:text-right">&copy; 2025 Genki SportZ. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+        document.getElementById('mobileMenu').classList.toggle('hidden');
+      });
+    </script>
+  </body>
+</html>

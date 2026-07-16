@@ -1,40 +1,332 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Genki Sports Links</title>
-    <!-- Tailwind CSS CDN for immediate use -->
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
-  <!-- backgroundDark: #171E14, text: white -->
-  <body class="bg-[#171E14] text-white font-sans antialiased m-0">
-    <!-- AppSpacing.pageHorizontal (16px/px-4) -->
-    <main class="max-w-2xl mx-auto px-4 py-8 sm:py-12">
-      
-      <h1 class="text-3xl font-bold mb-4 text-white">Genki Sports Link Gateway</h1>
-      
-      <!-- neutral300: #E0E0E0 for standard readable text -->
-      <p class="text-[#E0E0E0] text-base mb-6">
-        This domain handles tournament invite links and opens the Genki Sports
-        app when available.
-      </p>
 
-      <!-- surfaceDark: #1F2E18, darkBorder: #243128, AppRadii.lg: 24px -->
-      <div class="bg-[#1F2E18] border border-[#243128] rounded-[24px] p-5 my-4">
-        <p class="mb-2"><strong class="text-white text-lg">Expected invite URL format</strong></p>
-        <!-- inkBlack: #000000, AppRadii.defaultRadius: 16px -->
-        <code class="block bg-[#000000] border border-[#243128] rounded-[16px] px-4 py-3 font-mono text-sm text-[#E0E0E0] break-all">
-          https://genkisportz.in/tournament/&lt;id&gt;?invite=&lt;code&gt;
-        </code>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Genki SportZ - Book Courts, Connect & Play Badminton</title>
+  <meta name="description"
+    content="Genki SportZ is the ultimate badminton app. Book courts in real time, rent gear, join tournaments, connect with players nearby, and chat — all in one place." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    .hero-gradient {
+      background: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(77, 136, 47, 0.28) 0%, transparent 70%),
+        #171E14;
+    }
+
+    .card-hover {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card-hover:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(77, 136, 47, 0.18);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(77, 136, 47, 0.15);
+      border: 1px solid rgba(77, 136, 47, 0.35);
+      color: #7DC854;
+      border-radius: 9999px;
+      padding: 4px 14px;
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .shimmer {
+      background: linear-gradient(90deg, #1F2E18 0%, #2a3d22 50%, #1F2E18 100%);
+      background-size: 200% 100%;
+      animation: shimmer 2.5s infinite;
+    }
+
+    @keyframes shimmer {
+      0% {
+        background-position: 200% 0;
+      }
+
+      100% {
+        background-position: -200% 0;
+      }
+    }
+
+    .store-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #1F2E18;
+      border: 1px solid #2e4227;
+      border-radius: 14px;
+      padding: 12px 20px;
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .store-btn:hover {
+      background: #2a3d22;
+      border-color: #4D882F;
+    }
+
+    .store-btn .store-label {
+      font-size: 11px;
+      color: #9E9E9E;
+      line-height: 1;
+    }
+
+    .store-btn .store-name {
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .nav-link {
+      color: #9E9E9E;
+      font-size: 14px;
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .nav-link:hover {
+      color: #fff;
+    }
+
+    .section-divider {
+      border: none;
+      border-top: 1px solid #243128;
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body class="bg-[#171E14] text-white antialiased">
+
+  <!-- NAV -->
+  <nav class="sticky top-0 z-50 bg-[#171E14]/90 backdrop-blur-sm border-b border-[#243128]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2 text-white font-bold text-lg no-underline">
+        <span class="text-[#4D882F] text-2xl">🏸</span>
+        <span>Genki<span class="text-[#4D882F]">SportZ</span></span>
+      </a>
+      <div class="hidden sm:flex items-center gap-6">
+        <a href="#features" class="nav-link">Features</a>
+        <a href="/support" class="nav-link">Support</a>
+        <a href="/terms" class="nav-link">Terms</a>
+        <a href="/privacypolicy.html" class="nav-link">Privacy</a>
+      </div>
+      <!-- Mobile menu icon -->
+      <button id="mobileMenuBtn" class="sm:hidden text-[#9E9E9E] hover:text-white focus:outline-none"
+        aria-label="Open menu">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+    <!-- Mobile dropdown -->
+    <div id="mobileMenu" class="hidden sm:hidden bg-[#171E14] border-b border-[#243128] px-4 pb-4 flex flex-col gap-3">
+      <a href="#features" class="nav-link py-1">Features</a>
+      <a href="/support" class="nav-link py-1">Support</a>
+      <a href="/terms" class="nav-link py-1">Terms</a>
+      <a href="/privacypolicy.html" class="nav-link py-1">Privacy</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero-gradient pt-20 pb-24 px-4 sm:px-6 text-center">
+    <div class="max-w-3xl mx-auto">
+      <div class="mb-5 flex justify-center">
+        <span class="badge">🏸 The Badminton App</span>
+      </div>
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight mb-6">
+        Book Courts.<br />
+        <span class="text-[#4D882F]">Connect. Play.</span>
+      </h1>
+      <p class="text-[#E0E0E0] text-lg sm:text-xl max-w-xl mx-auto mb-10 leading-relaxed">
+        The all-in-one badminton platform — find courts, rent gear, join tournaments, challenge players nearby, and
+        chat, all from your phone.
+      </p>
+      <!-- Store Buttons -->
+      <div class="flex flex-col sm:flex-row gap-3 justify-center items-center mb-4">
+        <a href="#" id="appStoreBtn" class="store-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 shrink-0" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
+          </svg>
+          <div>
+            <div class="store-label">Download on the</div>
+            <div class="store-name">App Store</div>
+          </div>
+        </a>
+        <a href="#" id="playStoreBtn" class="store-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 shrink-0" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M3.18 23.76c.26.14.56.19.88.1l.1-.06 11.5-6.64-2.49-2.49-10 9.09zm15.23-9.37L16.1 12.9l2.31-2.49-10.87-6.27a.96.96 0 0 0-1.01.06l10.88 10zm1.33-7.17L13.4 3.5 11.1 5.84l7.03 4.06 1.61-.68zM3.05 2.23a1 1 0 0 0-.55.87v17.8c0 .38.2.7.5.87l.1.05 9.96-9.97V12L3.05 2.23z" />
+          </svg>
+          <div>
+            <div class="store-label">Get it on</div>
+            <div class="store-name">Google Play</div>
+          </div>
+        </a>
+      </div>
+      <p class="text-[#9E9E9E] text-sm">Available for iOS & Android</p>
+    </div>
+  </section>
+
+  <hr class="section-divider" />
+
+  <!-- FEATURES -->
+  <section id="features" class="py-20 px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Everything you need to play</h2>
+        <p class="text-[#9E9E9E] text-lg max-w-xl mx-auto">Built for badminton players, court owners, and everyone in
+          between.</p>
       </div>
 
-      <!-- slateGrey/neutral500: #9E9E9E for muted text -->
-      <p class="text-[#9E9E9E] text-sm mt-6">
-        If you reached this page from an invite, open the full link from your
-        chat app again.
-      </p>
-      
-    </main>
-  </body>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <!-- Feature cards -->
+        <div class="card-hover bg-[#1F2E18] border border-[#243128] rounded-[24px] p-6">
+          <div class="text-3xl mb-4">🏟️</div>
+          <h3 class="text-white font-semibold text-lg mb-2">Court Booking</h3>
+          <p class="text-[#9E9E9E] text-sm leading-relaxed">Search and book courts across partner academies in real
+            time. Visual timeline calendar for easy slot selection.</p>
+        </div>
+
+        <div class="card-hover bg-[#1F2E18] border border-[#243128] rounded-[24px] p-6">
+          <div class="text-3xl mb-4">🛒</div>
+          <h3 class="text-white font-semibold text-lg mb-2">Rent Equipment</h3>
+          <p class="text-[#9E9E9E] text-sm leading-relaxed">Add rackets, shuttlecocks, shoes and more to your booking.
+            Dynamic pricing with live stock validation.</p>
+        </div>
+
+        <div class="card-hover bg-[#1F2E18] border border-[#243128] rounded-[24px] p-6">
+          <div class="text-3xl mb-4">🤝</div>
+          <h3 class="text-white font-semibold text-lg mb-2">Connect & Match</h3>
+          <p class="text-[#9E9E9E] text-sm leading-relaxed">Find players near you at your skill level. Post public match
+            requests and never miss a game.</p>
+        </div>
+
+        <div class="card-hover bg-[#1F2E18] border border-[#243128] rounded-[24px] p-6">
+          <div class="text-3xl mb-4">🏆</div>
+          <h3 class="text-white font-semibold text-lg mb-2">Tournaments & Leagues</h3>
+          <p class="text-[#9E9E9E] text-sm leading-relaxed">Discover, register for, and follow local badminton
+            tournaments — all in one place.</p>
+        </div>
+
+        <div class="card-hover bg-[#1F2E18] border border-[#243128] rounded-[24px] p-6">
+          <div class="text-3xl mb-4">🛍️</div>
+          <h3 class="text-white font-semibold text-lg mb-2">Marketplace</h3>
+          <p class="text-[#9E9E9E] text-sm leading-relaxed">Buy and sell new or used badminton gear directly within the
+            app community.</p>
+        </div>
+
+        <div class="card-hover bg-[#1F2E18] border border-[#243128] rounded-[24px] p-6">
+          <div class="text-3xl mb-4">💬</div>
+          <h3 class="text-white font-semibold text-lg mb-2">In-App Chat</h3>
+          <p class="text-[#9E9E9E] text-sm leading-relaxed">Real-time messaging to coordinate matches, discuss
+            tournaments, and stay connected with your badminton circle.</p>
+        </div>
+
+        <div class="card-hover bg-[#1F2E18] border border-[#243128] rounded-[24px] p-6">
+          <div class="text-3xl mb-4">🔔</div>
+          <h3 class="text-white font-semibold text-lg mb-2">Smart Notifications</h3>
+          <p class="text-[#9E9E9E] text-sm leading-relaxed">Instant push alerts for booking confirmations, slot
+            reminders, and new messages — never miss an update.</p>
+        </div>
+
+        <div class="card-hover bg-[#1F2E18] border border-[#243128] rounded-[24px] p-6">
+          <div class="text-3xl mb-4">🏸</div>
+          <h3 class="text-white font-semibold text-lg mb-2">Friendly Matches</h3>
+          <p class="text-[#9E9E9E] text-sm leading-relaxed">Invite friends to a casual game with shareable invite links.
+            Works even if they don't have the app yet.</p>
+        </div>
+
+        <div class="card-hover bg-[#1F2E18] border border-[#243128] rounded-[24px] p-6">
+          <div class="text-3xl mb-4">⚙️</div>
+          <h3 class="text-white font-semibold text-lg mb-2">Admin Dashboard</h3>
+          <p class="text-[#9E9E9E] text-sm leading-relaxed">For stadium owners — manage courts, update rates, set slot
+            overrides, and block unavailable dates.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider" />
+
+  <!-- CTA SECTION -->
+  <section class="py-20 px-4 sm:px-6 text-center">
+    <div class="max-w-2xl mx-auto">
+      <div class="text-4xl mb-4">🏸</div>
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Ready to play?</h2>
+      <p class="text-[#9E9E9E] text-lg mb-8">Download Genki SportZ for free on your device.</p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center items-center">
+        <a href="#" class="store-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 shrink-0" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
+          </svg>
+          <div>
+            <div class="store-label">Download on the</div>
+            <div class="store-name">App Store</div>
+          </div>
+        </a>
+        <a href="#" class="store-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 shrink-0" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M3.18 23.76c.26.14.56.19.88.1l.1-.06 11.5-6.64-2.49-2.49-10 9.09zm15.23-9.37L16.1 12.9l2.31-2.49-10.87-6.27a.96.96 0 0 0-1.01.06l10.88 10zm1.33-7.17L13.4 3.5 11.1 5.84l7.03 4.06 1.61-.68zM3.05 2.23a1 1 0 0 0-.55.87v17.8c0 .38.2.7.5.87l.1.05 9.96-9.97V12L3.05 2.23z" />
+          </svg>
+          <div>
+            <div class="store-label">Get it on</div>
+            <div class="store-name">Google Play</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider" />
+
+  <!-- FOOTER -->
+  <footer class="py-10 px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-[#9E9E9E] text-sm">
+      <div class="flex items-center gap-2 font-semibold text-white">
+        <span class="text-[#4D882F] text-xl">🏸</span>
+        <span>Genki<span class="text-[#4D882F]">SportZ</span></span>
+      </div>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/support" class="nav-link">Support</a>
+        <a href="/terms" class="nav-link">Terms</a>
+        <a href="/privacypolicy.html" class="nav-link">Privacy Policy</a>
+        <a href="/delete-account-request.html" class="nav-link">Delete Account</a>
+      </div>
+      <p class="text-center sm:text-right">&copy; 2025 Genki SportZ. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    document.getElementById('mobileMenuBtn').addEventListener('click', function () {
+      var menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('hidden');
+    });
+    // Close mobile menu when a link is clicked
+    document.querySelectorAll('#mobileMenu a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        document.getElementById('mobileMenu').classList.add('hidden');
+      });
+    });
+  </script>
+</body>
+
 </html>
